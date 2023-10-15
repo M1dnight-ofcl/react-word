@@ -1,5 +1,8 @@
 import './index.css';
 const ipc = require('electron').ipcRenderer
+window.$ = window.jQuery = require('jquery')
+
+
 
 document.getElementById('close').addEventListener('click', (e) => {
     e.preventDefault();

@@ -2,10 +2,19 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 const App = () => {
+    const Page = () => {
+        return (
+            <div id="page">
+                <div id="textarea" contentEditable>
+                </div>
+            </div>
+        )
+    }
     return (
         <>
-            <h1>Hello, World!</h1>
-            <p>This is a test</p>
+            <div id="documentContainer">
+                <Page/>
+            </div>
         </>
     )
 }

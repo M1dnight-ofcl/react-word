@@ -1,12 +1,25 @@
 @import url('https://fonts.cdnfonts.com/css/orbiter-fbs-trial');
 
 :root {
+  --bg-1: #393939;
+
   --ui-1: #434343;
+
   --p-1: #e0e0e0;
+
   --navbar: #2a2a2a;
+
+  --active: #27fdbd;
+  
+  --transition-time: .35s;
   --font: 'Orbiter FBS Trial', sans-serif;
 }
-
+::selection {
+  background: var(--active);
+  color: var(--bg-1);
+  /* padding: 1vmin;
+  border-radius: 1vmin; */
+}
 #root, body, html {
   height: 100dvh;
   width: 100dvw;
@@ -14,6 +27,7 @@
   top: 35px;
   left: 0%;
   margin: 0;
+  background: var(--bg-1);
   -webkit-app-region: no-drag;
   padding: 0;
   font-family: var(--font);
@@ -28,6 +42,7 @@
   margin: 0;
   -webkit-app-region: drag;
   padding: 0;
+  z-index: 9999;
 }
 #titlebar #itemContainer {
   height: 35px;
@@ -54,6 +69,11 @@
   margin: 0;
   padding: 0;
   cursor: pointer;
+  transition: var(--transition-time);
+}
+#titlebar #itemContainer .item:hover {
+  background: var(--active);
+  color: var(--ui-1);
 }
 #titlebar h1 {
   font-size: 18px;
@@ -64,4 +84,56 @@
   left: 10px;
   margin: 0;
   padding: 0;
+  font-weight: 400;
+}
+
+#page {
+  height: auto;
+  width: 65%;
+  aspect-ratio: 1/1.414;
+  max-width: 100%;
+  background: #ffffff;
+  position: absolute;
+  top: 20vmin;
+  left: 50%;
+  resize: horizontal;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  border-radius: 1vmin;
+  cursor: text;
+}
+
+#documentContainer {
+  height: 100%;
+  width: calc(100% - 10px);
+  position: fixed;
+  top: 35px;
+  left: 10px;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  padding-bottom:  5vmin;
+}
+#documentContainer::-webkit-scrollbar { width: 10px; }
+#documentContainer::-webkit-scrollbar-thumb:hover { background-color: rgba(188, 188, 188, 0.612); }
+#documentContainer::-webkit-scrollbar-track-piece:start { background: transparent; }
+#documentContainer::-webkit-scrollbar-track-piece:end   { background: transparent; }
+#documentContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(159, 159, 159, 0.4);
+  border-radius: 5vmin;
+  cursor: pointer; 
+}
+
+#textarea {
+  height: calc(100% - 10vmin);
+  width: calc(100% - 10vmin);
+  resize: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  appearance: none;
+  padding: 5vmin;
+  /* Default styling */
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
