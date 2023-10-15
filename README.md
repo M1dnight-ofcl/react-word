@@ -1,0 +1,2 @@
+# What is React Word?
+**React Word** is an advanced word processor built using Electron, a popular framework for developing windows applications with a frontend experience and React/Vite; an unstopable combo of frontend frameworks for seamless development. The project will be open source with a planned expansive API for addon development and an easy theme system for slick styling.
